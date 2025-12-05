@@ -7,6 +7,8 @@ import {Button} from '@/components/ui/button';
 import {getProductItem} from '@/data/products';
 import {Download} from 'lucide-react';
 
+export const dynamic = 'force-dynamic';
+
 export async function generateMetadata({
   params
 }: {

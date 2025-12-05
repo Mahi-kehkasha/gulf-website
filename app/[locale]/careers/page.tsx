@@ -4,6 +4,8 @@ import FadeIn from '@/components/FadeIn';
 import {Card, CardContent, CardFooter, CardHeader, CardTitle} from '@/components/ui/card';
 import {Button} from '@/components/ui/button';
 
+export const dynamic = 'force-dynamic';
+
 export async function generateMetadata({
   params
 }: {

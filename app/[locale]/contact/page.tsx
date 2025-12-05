@@ -5,6 +5,8 @@ import FadeIn from '@/components/FadeIn';
 import {Card, CardContent, CardHeader, CardTitle} from '@/components/ui/card';
 import {MapPin, Phone, Mail, Clock} from 'lucide-react';
 
+export const dynamic = 'force-dynamic';
+
 export async function generateMetadata({
   params
 }: {

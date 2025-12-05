@@ -3,6 +3,8 @@ import SectionHeader from '@/components/SectionHeader';
 import FadeIn from '@/components/FadeIn';
 import Image from 'next/image';
 
+export const dynamic = 'force-dynamic';
+
 export async function generateMetadata({
   params
 }: {

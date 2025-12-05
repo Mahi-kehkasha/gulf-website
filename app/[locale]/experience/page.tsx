@@ -2,6 +2,8 @@ import {getTranslations} from 'next-intl/server';
 import SectionHeader from '@/components/SectionHeader';
 import {projects} from '@/data/experience';
 
+export const dynamic = 'force-dynamic';
+
 export async function generateMetadata({
   params
 }: {

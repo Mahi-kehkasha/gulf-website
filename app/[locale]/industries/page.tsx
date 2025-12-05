@@ -3,6 +3,8 @@ import SectionHeader from '@/components/SectionHeader';
 import IndustryCard from '@/components/IndustryCard';
 import {industries} from '@/data/industries';
 
+export const dynamic = 'force-dynamic';
+
 export async function generateMetadata({
   params
 }: {

@@ -3,6 +3,8 @@ import SectionHeader from '@/components/SectionHeader';
 import ProductCard from '@/components/ProductCard';
 import {productCategories} from '@/data/products';
 
+export const dynamic = 'force-dynamic';
+
 export async function generateMetadata({
   params
 }: {

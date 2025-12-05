@@ -1,4 +1,4 @@
-import {getTranslations} from 'next-intl/server';
+import {getTranslations, setRequestLocale} from 'next-intl/server';
 import {notFound} from 'next/navigation';
 import Hero from '@/components/Hero';
 import SectionHeader from '@/components/SectionHeader';
@@ -7,6 +7,8 @@ import {Card, CardContent} from '@/components/ui/card';
 import ProductCard from '@/components/ProductCard';
 import {getIndustryBySlug, industries} from '@/data/industries';
 import {getProductsByCategory} from '@/data/products';
+
+export const dynamic = 'force-dynamic';
 
 export async function generateStaticParams() {
   return industries.map((industry) => ({
@@ -39,6 +41,7 @@ export default async function IndustryDetailPage({
   params: Promise<{slug: string; locale: string}>;
 }) {
   const {slug, locale} = await params;
+  setRequestLocale(locale);
   const t = await getTranslations('industries.detail');
   const industry = getIndustryBySlug(slug);
 

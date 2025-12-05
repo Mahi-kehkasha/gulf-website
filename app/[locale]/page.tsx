@@ -13,6 +13,8 @@ import {industries} from '@/data/industries';
 import {testimonials} from '@/data/testimonials';
 import {CheckCircle, Award, Users, Truck, Package, DollarSign} from 'lucide-react';
 
+export const dynamic = 'force-dynamic';
+
 export async function generateMetadata({
   params
 }: {

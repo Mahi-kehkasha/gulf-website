@@ -6,6 +6,8 @@ import {Card, CardContent, CardHeader, CardTitle} from '@/components/ui/card';
 import Image from 'next/image';
 import {Target, Eye, Heart, Award as AwardIcon} from 'lucide-react';
 
+export const dynamic = 'force-dynamic';
+
 export async function generateMetadata({
   params
 }: {

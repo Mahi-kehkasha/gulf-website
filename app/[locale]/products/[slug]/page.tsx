@@ -1,10 +1,12 @@
-import {getTranslations} from 'next-intl/server';
+import {getTranslations, setRequestLocale} from 'next-intl/server';
 import {notFound} from 'next/navigation';
 import Hero from '@/components/Hero';
 import SectionHeader from '@/components/SectionHeader';
 import ProductCard from '@/components/ProductCard';
 import FadeIn from '@/components/FadeIn';
 import {productCategories, getProductsByCategory} from '@/data/products';
+
+export const dynamic = 'force-dynamic';
 
 export async function generateStaticParams() {
   return productCategories.map((category) => ({
@@ -37,6 +39,7 @@ export default async function ProductCategoryPage({
   params: Promise<{slug: string; locale: string}>;
 }) {
   const {slug, locale} = await params;
+  setRequestLocale(locale);
   const t = await getTranslations('products');
   const category = productCategories.find((c) => c.slug === slug);
   const products = getProductsByCategory(slug);

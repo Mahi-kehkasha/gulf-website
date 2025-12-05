@@ -1,10 +1,11 @@
-import {getTranslations} from 'next-intl/server';
 import {notFound} from 'next/navigation';
 import Hero from '@/components/Hero';
 import SectionHeader from '@/components/SectionHeader';
 import FadeIn from '@/components/FadeIn';
 import {Card, CardContent, CardHeader, CardTitle} from '@/components/ui/card';
 import {getServiceBySlug, services} from '@/data/services';
+
+export const dynamic = 'force-dynamic';
 
 export async function generateStaticParams() {
   return services.map((service) => ({
