@@ -45,7 +45,7 @@ export default function TestimonialsCarousel({
             <CardContent className="p-0">
               <Quote className="h-12 w-12 text-primary-500 mb-4" />
               <p className="text-lg text-gray-300 mb-6 italic">
-                "{testimonials[currentIndex].text}"
+                &ldquo;{testimonials[currentIndex].text}&rdquo;
               </p>
               <div>
                 <p className="font-semibold text-gray-100">

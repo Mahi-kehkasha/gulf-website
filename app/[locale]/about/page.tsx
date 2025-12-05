@@ -62,7 +62,7 @@ export default async function AboutPage({
                   <div className="flex-grow">
                     <h3 className="text-2xl font-bold mb-4 text-gray-100">{t('founder.title')}</h3>
                     <p className="text-lg text-gray-300 leading-relaxed italic">
-                      "{t('founder.text')}"
+                      &ldquo;{t('founder.text')}&rdquo;
                     </p>
                   </div>
                 </div>
