@@ -63,7 +63,7 @@ export default function Footer() {
                 </li>
                 <li className="flex items-center space-x-2">
                   <Mail className="h-5 w-5 flex-shrink-0 text-primary-400" />
-                  <span>info@gulfpipes.com</span>
+                  <span>info@gulfpipesupply.com</span>
                 </li>
               </ul>
           </div>
