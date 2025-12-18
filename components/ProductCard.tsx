@@ -38,6 +38,7 @@ export default function ProductCard({
             src={image}
             alt={title}
             fill
+            priority={index === 0}
             className="object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-125"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

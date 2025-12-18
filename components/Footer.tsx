@@ -27,7 +27,7 @@ export default function Footer() {
               alt="Gulf Pipes Logo"
               width={200}
               height={70}
-              className="h-20 w-auto mb-4"
+              className="w-[180px] h-auto mb-4"
             />
             <p className="text-gray-400 text-sm">{t('description')}</p>
           </div>

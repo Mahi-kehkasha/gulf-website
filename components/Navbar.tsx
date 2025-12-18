@@ -40,26 +40,59 @@ export default function Navbar() {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-          className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-charcoal-900/98 backdrop-blur-md shadow-dark border-b border-charcoal-800'
-          : 'bg-charcoal-900/95'
+          ? 'bg-white shadow-md border-b border-slate-200'
+          : 'bg-white border-b border-slate-200'
       }`}
     >
+      {/* Top info bar (visual only, no behavior change) */}
+      <div className="hidden lg:block bg-cyan-50 border-b border-slate-200">
+        <div className="container mx-auto px-4 h-10 flex items-center justify-between text-xs font-medium text-slate-700">
+          <div className="flex items-center gap-6">
+            <span className="inline-flex items-center gap-2">
+              <span className="h-2 w-2 rounded-full bg-cyan-500" />
+              <span className="tracking-wide uppercase">
+                {/* Retain existing meaning by keeping this generic helper text */}
+                {t('support')}
+              </span>
+            </span>
+          </div>
+          <div className="flex items-center gap-4 text-[11px]">
+            <button className="underline-offset-4 hover:underline text-slate-800">
+              E-Brochure
+            </button>
+            <button className="underline-offset-4 hover:underline text-slate-800">
+              LinkedIn
+            </button>
+            <button className="underline-offset-4 hover:underline text-slate-800">
+              Google Map
+            </button>
+          </div>
+        </div>
+      </div>
+
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-24">
+        <div className="flex items-center justify-between h-20 lg:h-24">
           <Link 
             href={`/${locale}`} 
             className="flex items-center space-x-3 group transition-transform duration-300 hover:scale-105"
           >
-            <Image
-              src="/images/logo.svg"
-              alt="Gulf Pipes Logo"
-              width={250}
-              height={80}
-              className="h-20 w-auto transition-all duration-300 group-hover:brightness-110"
-              priority
-            />
+            <div className="flex items-center gap-3">
+              <Image
+                src="/images/logo.svg"
+                alt="Gulf Pipes Logo"
+                width={200}
+                height={64}
+                className="h-12 lg:h-16 w-auto transition-all duration-300 group-hover:brightness-110"
+                priority
+              />
+              <div className="hidden sm:flex flex-col leading-tight">
+                <span className="text-[11px] font-semibold tracking-[0.2em] uppercase text-slate-500">
+                  The Piping People
+                </span>
+              </div>
+            </div>
           </Link>
 
           {/* Desktop Menu */}
@@ -68,10 +101,10 @@ export default function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm font-semibold text-gray-200 hover:text-primary-400 transition-all duration-300 relative group px-3 py-2 rounded-lg hover:bg-charcoal-800"
+                className="text-sm font-semibold text-slate-800 hover:text-cyan-700 transition-all duration-300 relative group px-3 py-2 rounded-md"
               >
                 {item.label}
-                <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-primary-500 transition-all duration-300 group-hover:w-[calc(100%-0.75rem)]"></span>
+                <span className="absolute left-1/2 -bottom-1 -translate-x-1/2 w-0 h-0.5 bg-cyan-500 transition-all duration-300 group-hover:w-full" />
               </Link>
             ))}
             <MegaMenu />
@@ -79,13 +112,18 @@ export default function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm font-semibold text-gray-200 hover:text-primary-400 transition-all duration-300 relative group px-3 py-2 rounded-lg hover:bg-charcoal-800"
+                className="text-sm font-semibold text-slate-800 hover:text-cyan-700 transition-all duration-300 relative group px-3 py-2 rounded-md"
               >
                 {item.label}
-                <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-primary-500 transition-all duration-300 group-hover:w-[calc(100%-0.75rem)]"></span>
+                <span className="absolute left-1/2 -bottom-1 -translate-x-1/2 w-0 h-0.5 bg-cyan-500 transition-all duration-300 group-hover:w-full" />
               </Link>
             ))}
             <LanguageSwitcher />
+            <Link href={`/${locale}/contact`}>
+              <Button className="ml-4 rounded-full bg-slate-900 hover:bg-black text-white px-7 py-2 text-sm font-semibold shadow-md">
+                {t('contactNow')}
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}

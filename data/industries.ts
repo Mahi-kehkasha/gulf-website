@@ -20,7 +20,7 @@ export const industries: Industry[] = [
     nameAr: 'صناعات النفط والغاز',
     description: 'Comprehensive piping solutions for oil and gas industry.',
     descriptionAr: 'حلول أنابيب شاملة لصناعة النفط والغاز.',
-    image: '/images/industries/oil-gas.jpg',
+    image: '/images/industries/oil-gas.png',
     overview:
       'We provide specialized piping solutions for upstream, midstream, and downstream operations in the oil and gas sector.',
     overviewAr:
@@ -45,7 +45,7 @@ export const industries: Industry[] = [
     nameAr: 'صناعات البتروكيماويات',
     description: 'Specialized solutions for petrochemical facilities.',
     descriptionAr: 'حلول متخصصة لمرافق البتروكيماويات.',
-    image: '/images/industries/petrochemicals.jpg',
+    image: '/images/industries/petrochemicals.png',
     overview:
       'We supply premium-quality pipes and fittings for petrochemical plants and facilities.',
     overviewAr:
@@ -170,7 +170,7 @@ export const industries: Industry[] = [
     nameAr: 'الكهربائية والميكانيكية والهندسة الصناعية',
     description: 'Comprehensive solutions for electro-mechanical contractors.',
     descriptionAr: 'حلول شاملة لمقاولي الكهرباء والميكانيكا.',
-    image: '/images/industries/electro-mechanical.jpg',
+    image: '/images/industries/power.png',
     overview:
       'We serve electro-mechanical contractors and engineering sectors with quality products and technical expertise.',
     overviewAr:

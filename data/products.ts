@@ -27,31 +27,31 @@ export const productCategories = [
     slug: 'seamless-stainless',
     name: 'Seamless Stainless Steel Pipes',
     nameAr: 'أنابيب الفولاذ المقاوم للصدأ بدون لحام',
-    image: '/images/products/seamless-stainless.jpg',
+    image: '/images/products/seamless-stainless.png',
   },
   {
     slug: 'erw-welded',
     name: 'ERW / Welded Pipes',
     nameAr: 'أنابيب ERW / الملحومة',
-    image: '/images/products/erw-welded.jpg',
+    image: '/images/products/erw-welded.png',
   },
   {
     slug: 'duplex',
     name: 'Duplex & Super Duplex Pipes',
     nameAr: 'أنابيب دوبلكس وسوبر دوبلكس',
-    image: '/images/products/duplex.jpg',
+    image: '/images/products/duplex.png',
   },
   {
     slug: 'carbon-steel',
     name: 'Carbon Steel Pipes',
     nameAr: 'أنابيب الفولاذ الكربوني',
-    image: '/images/products/carbon-steel.jpg',
+    image: '/images/products/carbon-steel.png',
   },
   {
     slug: 'fittings',
     name: 'Pipe Fittings',
     nameAr: 'ملحقات الأنابيب',
-    image: '/images/products/fittings.jpg',
+    image: '/images/products/fittings.png',
     description: 'Elbows, Tees, Reducers',
     descriptionAr: 'المنحنيات، التوصيلات، المخفضات',
   },
@@ -59,19 +59,19 @@ export const productCategories = [
     slug: 'flanges-valves',
     name: 'Flanges & Valves',
     nameAr: 'الفلنجات والصمامات',
-    image: '/images/products/flanges-valves.jpg',
+    image: '/images/products/flanges-valves.png',
   },
   {
     slug: 'fasteners',
     name: 'Fasteners & Gaskets',
     nameAr: 'المثبتات والجوانات',
-    image: '/images/products/fasteners.jpg',
+    image: '/images/products/fittings.png',
   },
   {
     slug: 'tubes',
     name: 'Industrial Tubes & Accessories',
     nameAr: 'الأنابيب الصناعية والملحقات',
-    image: '/images/products/tubes.jpg',
+    image: '/images/products/erw-welded.png',
   },
 ];
 
@@ -85,7 +85,7 @@ export const products: Product[] = [
     categorySlug: 'carbon-steel',
     description: 'High-quality carbon steel pipes for industrial applications.',
     descriptionAr: 'أنابيب فولاذية كربونية عالية الجودة للتطبيقات الصناعية.',
-    image: '/images/products/carbon-steel.jpg',
+    image: '/images/products/carbon-steel.png',
     items: [
       {
         id: '1-1',
@@ -94,7 +94,7 @@ export const products: Product[] = [
         nameAr: 'أنبوب فولاذي كربوني درجة أ',
         description: 'Premium grade A carbon steel pipe with excellent durability.',
         descriptionAr: 'أنبوب فولاذي كربوني درجة أ متميز بمتانة ممتازة.',
-        image: '/images/products/carbon-steel-grade-a.jpg',
+        image: '/images/products/carbon-steel.png',
         specifications: {
           'Diameter': '2-24 inches',
           'Thickness': '0.5-2 inches',
@@ -113,7 +113,7 @@ export const products: Product[] = [
     categorySlug: 'seamless-stainless',
     description: 'Premium seamless stainless steel pipes for high-pressure applications.',
     descriptionAr: 'أنابيب فولاذية مقاومة للصدأ بدون لحام متميزة للتطبيقات عالية الضغط.',
-    image: '/images/products/seamless-stainless.jpg',
+    image: '/images/products/seamless-stainless.png',
   },
   {
     id: '3',
@@ -124,7 +124,7 @@ export const products: Product[] = [
     categorySlug: 'erw-welded',
     description: 'High-quality ERW welded pipes for various industrial applications.',
     descriptionAr: 'أنابيب ERW ملحومة عالية الجودة لتطبيقات صناعية متنوعة.',
-    image: '/images/products/erw-welded.jpg',
+    image: '/images/products/erw-welded.png',
   },
   {
     id: '4',
@@ -135,7 +135,7 @@ export const products: Product[] = [
     categorySlug: 'duplex',
     description: 'Premium duplex and super duplex pipes for corrosive environments.',
     descriptionAr: 'أنابيب دوبلكس وسوبر دوبلكس متميزة للبيئات المسببة للتآكل.',
-    image: '/images/products/duplex.jpg',
+    image: '/images/products/duplex.png',
   },
   {
     id: '5',
@@ -146,7 +146,7 @@ export const products: Product[] = [
     categorySlug: 'fittings',
     description: 'High-quality pipe elbows in various angles and sizes.',
     descriptionAr: 'منحنيات أنابيب عالية الجودة بزوايا وأحجام متنوعة.',
-    image: '/images/products/fittings.jpg',
+    image: '/images/products/fittings.png',
   },
   {
     id: '6',
@@ -157,7 +157,7 @@ export const products: Product[] = [
     categorySlug: 'flanges-valves',
     description: 'Premium flanges for pipe connections and installations.',
     descriptionAr: 'فلنجات متميزة لاتصالات وتركيبات الأنابيب.',
-    image: '/images/products/flanges-valves.jpg',
+    image: '/images/products/flanges-valves.png',
   },
   {
     id: '7',
@@ -168,7 +168,7 @@ export const products: Product[] = [
     categorySlug: 'fasteners',
     description: 'High-quality fasteners, bolts, and gaskets for industrial applications.',
     descriptionAr: 'مثبتات وبراغي وجوانات عالية الجودة للتطبيقات الصناعية.',
-    image: '/images/products/fasteners.jpg',
+    image: '/images/products/fittings.png',
   },
   {
     id: '8',
@@ -179,7 +179,7 @@ export const products: Product[] = [
     categorySlug: 'tubes',
     description: 'Premium industrial tubes and accessories for various applications.',
     descriptionAr: 'أنابيب وملحقات صناعية متميزة لتطبيقات متنوعة.',
-    image: '/images/products/tubes.jpg',
+    image: '/images/products/erw-welded.png',
   },
 ];
 
