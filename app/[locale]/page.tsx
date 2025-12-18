@@ -72,8 +72,67 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* Services Overview */}
+      {/* Products Overview - Our Products */}
+      <section className="py-20 bg-charcoal-900">
+        <div className="container mx-auto px-4">
+          <SectionHeader
+            title={t('products.title')}
+            subtitle={t('products.subtitle')}
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {productCategories.slice(0, 6).map((category, index) => (
+              <ProductCard
+                key={category.slug}
+                title={locale === 'ar' ? category.nameAr : category.name}
+                description="High-quality industrial pipes for various applications"
+                image={category.image}
+                slug={category.slug}
+                index={index}
+              />
+            ))}
+          </div>
+          <div className="text-center mt-12">
+            <Link href={`/${locale}/products`}>
+              <Button size="lg">{tProducts('viewAll')}</Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Brands */}
       <section className="py-20 bg-charcoal-950">
+        <div className="container mx-auto px-4">
+          <div className="rounded-3xl bg-charcoal-900/95 border border-charcoal-800 px-6 py-12 md:px-10 md:py-14 lg:px-16 lg:py-16 overflow-hidden relative">
+            <div className="pointer-events-none absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top,rgba(15,118,178,0.35),transparent_55%),radial-gradient(circle_at_bottom,rgba(15,23,42,0.9),transparent_60%)]" />
+            <div className="relative z-10 text-center mb-10 md:mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-white">
+                Our Brands<span className="text-cyan-400">.</span>
+              </h2>
+              <p className="mt-4 text-sm md:text-base text-gray-400 max-w-3xl mx-auto">
+                Brands we stock are approved by major end-users across the globe.
+                This is placeholder copy to mirror the reference layout.
+              </p>
+            </div>
+            <div className="relative z-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
+              {Array.from({ length: 15 }).map((_, index) => (
+                <div
+                  key={index}
+                  className="h-20 md:h-24 lg:h-24 rounded-xl bg-white flex items-center justify-center shadow-md"
+                >
+                  <div className="w-20 h-10 md:w-24 md:h-12 rounded-md bg-slate-100 border border-slate-200 flex items-center justify-center">
+                    <span className="text-[10px] md:text-xs font-semibold tracking-wide text-slate-500">
+                      Brand Logo
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Overview (unchanged content, now after Brands) */}
+      <section className="py-20 bg-charcoal-900">
         <div className="container mx-auto px-4">
           <SectionHeader
             title="Our Services"
@@ -114,33 +173,6 @@ export default async function HomePage({
           <div className="text-center mt-12">
             <Link href={`/${locale}/services`}>
               <Button size="lg">View All Services</Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Products Overview */}
-      <section className="py-20 bg-charcoal-900">
-        <div className="container mx-auto px-4">
-          <SectionHeader
-            title={t('products.title')}
-            subtitle={t('products.subtitle')}
-          />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {productCategories.slice(0, 6).map((category, index) => (
-              <ProductCard
-                key={category.slug}
-                title={locale === 'ar' ? category.nameAr : category.name}
-                description="High-quality industrial pipes for various applications"
-                image={category.image}
-                slug={category.slug}
-                index={index}
-              />
-            ))}
-          </div>
-          <div className="text-center mt-12">
-            <Link href={`/${locale}/products`}>
-              <Button size="lg">{tProducts('viewAll')}</Button>
             </Link>
           </div>
         </div>

@@ -54,7 +54,7 @@ export default async function ContactPage({
                     <div>
                       <p className="font-semibold mb-1 text-gray-200">{t('info.address')}</p>
                       <p className="text-gray-400">
-                        123 Industrial Street, Business District, City
+                        Al Madinah Al Mounawwarah Street Al Jubail
                       </p>
                     </div>
                   </div>
@@ -62,14 +62,14 @@ export default async function ContactPage({
                     <Phone className="h-6 w-6 text-primary-400 flex-shrink-0" />
                     <div>
                       <p className="font-semibold mb-1 text-gray-200">{t('info.phone')}</p>
-                      <p className="text-gray-400">+1 (555) 123-4567</p>
+                      <p className="text-gray-400">+966 13 363 0061</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-4">
                     <Mail className="h-6 w-6 text-primary-400 flex-shrink-0" />
                     <div>
                       <p className="font-semibold mb-1 text-gray-200">{t('info.email')}</p>
-                      <p className="text-gray-400">info@gulfpipes.com</p>
+                      <p className="text-gray-400">info@gulfpipesupply.com</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-4">
