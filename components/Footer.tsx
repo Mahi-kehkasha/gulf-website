@@ -55,7 +55,8 @@ export default function Footer() {
               <ul className="space-y-3 text-sm text-gray-400">
                 <li className="flex items-start space-x-2">
                   <MapPin className="h-5 w-5 mt-0.5 flex-shrink-0 text-primary-400" />
-                  <span>Al Madinah Al Mounawwarah Street Al Jubail</span>
+                  <span>Madina Munawara Street
+P.O Box 1213, Al Jubail - 31951.KSA</span>
                 </li>
                 <li className="flex items-center space-x-2">
                   <Phone className="h-5 w-5 flex-shrink-0 text-primary-400" />
