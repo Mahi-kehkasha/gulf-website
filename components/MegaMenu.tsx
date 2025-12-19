@@ -24,7 +24,7 @@ interface MegaMenuProps {
 function MegaMenuDropdown({ label, items, basePath }: MegaMenuProps) {
   const locale = useLocale();
   const [isOpen, setIsOpen] = useState(false);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -37,16 +37,11 @@ function MegaMenuDropdown({ label, items, basePath }: MegaMenuProps) {
     if (isOpen) {
       document.addEventListener('mousedown', handleClickOutside);
     }
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [isOpen]);
 
   const handleMouseEnter = () => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
     setIsOpen(true);
   };
 
@@ -64,12 +59,13 @@ function MegaMenuDropdown({ label, items, basePath }: MegaMenuProps) {
       onMouseLeave={handleMouseLeave}
     >
       <button
-        className="flex items-center space-x-1 text-sm font-semibold text-gray-200 hover:text-primary-400 transition-all duration-300 relative group px-3 py-2 rounded-lg hover:bg-charcoal-800"
+        type="button"
+        className="flex items-center space-x-1 text-sm font-semibold text-slate-800 hover:text-blue-600 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-slate-50"
         onClick={() => setIsOpen(!isOpen)}
       >
         <span>{label}</span>
         <ChevronDown
-          className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`}
+          className={`h-4 w-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
         />
       </button>
 
@@ -80,21 +76,21 @@ function MegaMenuDropdown({ label, items, basePath }: MegaMenuProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[800px] bg-charcoal-900 shadow-dark border border-charcoal-800 rounded-lg p-8 z-50"
+            className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[800px] bg-white shadow-2xl border border-slate-200 rounded-xl p-8 z-50"
           >
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-3 gap-4">
               {items.slice(0, 6).map((item) => (
                 <Link
                   key={item.slug}
                   href={`/${locale}${basePath}/${item.slug}`}
-                  className="group p-4 rounded-lg hover:bg-charcoal-800 transition-all duration-300 border border-transparent hover:border-primary-500/30"
+                  className="group p-4 rounded-lg hover:bg-blue-50/50 transition-all duration-300 border border-transparent hover:border-blue-100"
                   onClick={() => setIsOpen(false)}
                 >
-                  <h3 className="font-semibold text-gray-200 group-hover:text-primary-400 mb-2 text-base transition-colors">
+                  <h3 className="font-bold text-slate-900 group-hover:text-blue-600 mb-1 text-base transition-colors">
                     {locale === 'ar' ? item.nameAr : item.name}
                   </h3>
                   {item.description && (
-                    <p className="text-sm text-gray-400 line-clamp-2 leading-relaxed group-hover:text-gray-300 transition-colors">
+                    <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed">
                       {locale === 'ar' && item.descriptionAr
                         ? item.descriptionAr
                         : item.description}
@@ -103,14 +99,15 @@ function MegaMenuDropdown({ label, items, basePath }: MegaMenuProps) {
                 </Link>
               ))}
             </div>
-            <div className="mt-6 pt-6 border-t border-charcoal-800">
+            
+            <div className="mt-6 pt-6 border-t border-slate-100 flex justify-between items-center">
               <Link
                 href={`/${locale}${basePath}`}
-                className="inline-flex items-center text-sm font-semibold text-primary-400 hover:text-primary-300 transition-all duration-300 group"
+                className="text-sm font-bold text-blue-600 hover:text-blue-700 transition-colors flex items-center gap-2 group"
                 onClick={() => setIsOpen(false)}
               >
-                <span>{locale === 'ar' ? 'عرض الكل' : 'View All'}</span>
-                <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                {locale === 'ar' ? 'عرض الكل' : 'View All'}
+                <span className="group-hover:translate-x-1 transition-transform">→</span>
               </Link>
             </div>
           </motion.div>
@@ -125,7 +122,7 @@ export default function MegaMenu() {
   const t = useTranslations('nav');
 
   return (
-    <div className="hidden lg:flex items-center space-x-6">
+    <div className="hidden lg:flex items-center space-x-2">
       <MegaMenuDropdown
         label={t('services')}
         items={services.map((s) => ({
@@ -162,4 +159,3 @@ export default function MegaMenu() {
     </div>
   );
 }
-
