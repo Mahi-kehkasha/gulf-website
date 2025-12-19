@@ -27,12 +27,12 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Hidden pages: Gallery, Careers, Certificates
+  // Hidden pages: Gallery, Careers, Certificates,experience, FAQ
   const navItems = [
     { href: `/${locale}`, label: t('home') },
     { href: `/${locale}/about`, label: t('about') },
-    { href: `/${locale}/experience`, label: t('experience') },
-    { href: `/${locale}/faq`, label: t('faq') },
+    //{ href: `/${locale}/experience`, label: t('experience') },
+    //{ href: `/${locale}/faq`, label: t('faq') },
     { href: `/${locale}/contact`, label: t('contact') },
   ];
 

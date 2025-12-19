@@ -115,10 +115,10 @@ export default async function HomePage({
 
             <div className="relative z-10 text-center mb-10 md:mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-white">
-                Our Clients <span className="text-cyan-400">.</span>
+                Our Clients <span className="text-cyan-400"></span>
               </h2>
               <p className="mt-4 text-sm md:text-base text-gray-400 max-w-3xl mx-auto">
-                Brands we stock are approved by major end-users across the globe.
+                Trusted by Major End-Users Across the Globe
               </p>
             </div>
 

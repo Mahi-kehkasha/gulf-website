@@ -55,7 +55,7 @@ export default async function ContactPage({
                       <p className="font-semibold mb-1 text-gray-200">{t('info.address')}</p>
                       <p className="text-gray-400">
                         Madina Munawara Street
-P.O Box 1213, Al Jubail - 31951.KSA
+P.O Box 1213, Al Jubail - 31951, KSA
                       </p>
                     </div>
                   </div>
