@@ -27,7 +27,6 @@ export default function Hero({
   const t = useTranslations('common');
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  // Default video for homepage, use image for other pages if provided
   const defaultVideo = '/videos/hero-background.mp4';
   const useVideo = video !== undefined ? video : (!image ? defaultVideo : null);
 
@@ -41,21 +40,27 @@ export default function Hero({
 
   return (
     <section className="relative overflow-hidden bg-sky-50">
-      <div className="absolute inset-y-0 left-[-10%] w-[65%] bg-slate-900 rounded-r-[120px]" />
-      <div className="relative z-10 container mx-auto px-4 py-16 lg:py-24">
-        <div className="grid lg:grid-cols-2 gap-10 items-center">
-          {/* Left content - dark panel */}
-          <div className="text-white">
+      {/* Background Shape: 
+          Mobile: Full width, less rounded 
+          Desktop: Partial width with large rounded corner
+      */}
+      <div className="absolute inset-y-0 left-0 lg:left-[-10%] w-full lg:w-[65%] bg-slate-900 rounded-b-[60px] lg:rounded-b-none lg:rounded-r-[120px]" />
+      
+      <div className="relative z-10 container mx-auto px-4 py-12 md:py-20 lg:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-10 items-center">
+          
+          {/* Left content */}
+          <div className="text-white text-center lg:text-left order-2 lg:order-1">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
               className="mb-6"
             >
-              <p className="text-xs md:text-sm font-semibold tracking-[0.3em] uppercase text-cyan-400 mb-4">
+              <p className="text-[10px] md:text-sm font-semibold tracking-[0.3em] uppercase text-cyan-400 mb-4">
                 #ThePipingPeople
               </p>
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-[1.1]">
                 <span className="text-white">
                   {title}
                 </span>
@@ -66,7 +71,7 @@ export default function Hero({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
-              className="text-base md:text-xl mb-10 max-w-xl text-slate-200 leading-relaxed"
+              className="text-sm md:text-xl mb-8 md:mb-10 max-w-xl mx-auto lg:mx-0 text-slate-200 leading-relaxed"
             >
               {subtitle}
             </motion.p>
@@ -76,13 +81,11 @@ export default function Hero({
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.97 }}
               >
                 <Link href={ctaLink} className="inline-block">
                   <Button 
                     size="lg" 
-                    className="text-sm md:text-base px-10 py-6 rounded-full bg-slate-900 hover:bg-black text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                    className="text-sm md:text-base px-8 md:px-10 py-5 md:py-6 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-lg transition-all duration-300 active:scale-95"
                   >
                     {ctaText}
                   </Button>
@@ -91,9 +94,13 @@ export default function Hero({
             )}
           </div>
 
-          {/* Right visual - building image / video */}
-          <div className="relative h-64 sm:h-80 lg:h-[420px]">
-            <div className="absolute -left-10 top-6 w-[120%] h-[110%] rounded-[32px] overflow-hidden shadow-2xl border border-slate-200 bg-white">
+          {/* Right visual */}
+          <div className="relative h-[250px] sm:h-[350px] lg:h-[420px] order-1 lg:order-2">
+            {/* Visual Container:
+                Mobile: Centered, fits screen width
+                Desktop: Overhanging slightly to the left (-left-10)
+            */}
+            <div className="absolute left-0 lg:-left-10 top-0 w-full lg:w-[115%] h-full rounded-[24px] md:rounded-[32px] overflow-hidden shadow-2xl border border-slate-200 bg-white">
               {useVideo ? (
                 <video
                   ref={videoRef}
@@ -111,13 +118,14 @@ export default function Hero({
                   fill
                   className="object-cover"
                   priority
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
               )}
             </div>
           </div>
+
         </div>
       </div>
     </section>
   );
 }
-
